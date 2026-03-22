@@ -81,8 +81,8 @@ jobs:
         with:
           push: true
           tags: |
-            mbel12345/assignment_8:latest
-            mbel12345/assignment_8:${{ github.sha }}
-          platform: linux/amd64,linux/arm64
+            msb64/assignment_8:latest
+            msb64/assignment_8:${{ github.sha }}
+          platforms: linux/amd64,linux/arm64
           cache-from: type=registry,ref=mbel12345/assignment_8:cache
           cache-to: type=inline,mode=max
