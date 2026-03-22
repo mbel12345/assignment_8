@@ -24,3 +24,32 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+## Run app as stand-alone Python app
+In WSL/VS Code Terminal:
+```bash
+python3 main.py
+```
+
+In Browser, go to:
+http://localhost:8000/
+
+## Run test cases locally
+In WSL/VS Code Terminal:
+```bash
+pytest
+```
+
+## Build image and start container
+In WSL/VS Code Terminal:
+```bash
+docker rm -f /fastapi_calculator && docker compose up --build
+```
+
+In Browser, go to:
+http://localhost:8000/
+
+
+## Configure Github Actions
+Github Actions will run on any pushes or pull requests. Only pull requests will result in the deployment step.
+Pre-requisite: In Dockerhub, create an Access Token, then add it to Environment var "DOCKERHUB_PASSWORD" in GitHub. Add DOCKERHUB_USERNAME also.
