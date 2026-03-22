@@ -38,7 +38,7 @@ async def http_exception_handler(request: Request, errors: HTTPException):
 async def validation_exception_handler(request: Request, errors: RequestValidationError):
 
     # Extract error messages
-    error_messages = '; '.join([f'{err["loc"][-1]}: {err["msg"]}' for err in errors.errors()])
+    error_messages = '; '.join([f'{err['loc'][-1]}: {err['msg']}' for err in errors.errors()])
     logger.error(f'ValidationError on {request.url.path}: {error_messages}')
     return JSONResponse(
         status_code=400,
