@@ -1,6 +1,6 @@
 '''
 Create the FastAPI calculator application.
-All API endpoints stored in app.routes so that they can be covered by the testing.
+All API endpoints stored in app.routes so that they can be in the coverage report of the testing.
 '''
 
 import logging
