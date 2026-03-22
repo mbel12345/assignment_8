@@ -30,7 +30,7 @@ def fastapi_server():
                 server_up = True
                 print('FastAPI server is up and running.')
                 break
-        except requests.exception.ConnectionError:
+        except requests.exceptions.ConnectionError:
             pass # Try again after waiting for a second if there is an error
         time.sleep(1)
 
@@ -51,7 +51,7 @@ def playwright_instance_fixture():
 
     # Manage Playwright's lifecycle
 
-    with sync_playwright as p:
+    with sync_playwright() as p:
         yield p
 
 @pytest.fixture(scope='session')
